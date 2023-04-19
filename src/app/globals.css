@@ -2,26 +2,167 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.text-animation {    
+    background: linear-gradient(
+        #149cca,
+        #09f3d0 10px,
+        transparent 10px,
+        transparent 10px
+        );
+            color: transparent;
+
+  background-size: 150% 9px;
+  height: fit-content;
+  animation: pan-overlay 60s infinite linear;
+  z-index: -5;
+  background-clip: text;
+  
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.screen-overlay {    
+  background: linear-gradient(
+    #149cca3a,
+    #09f3d02d 1px,
+    transparent 1px,
+    transparent 1px
+  );
+  background-size: 50% 9px;
+  height: 100%;
+  width: 100%;
+  animation: pan-overlay 60s infinite linear;
+  position: absolute;
+  z-index: -5;
+  left: 0px;
+  top: 0px;
+}
+
+
+
+@keyframes pan-overlay {
+  from {
+    background-position: 0% 0%;
+  }
+  
+  to {
+    background-position: 0% -100%;
   }
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@keyframes pan-image {  
+  0% {
+    background-position: 50% 20%;
+    background-size: 200%;
+  }
+  
+  20% {
+    background-position: 30% 35%;
+    background-size: 200%;
+  }
+  
+  20.0001% { /* -- View 2 -- */
+    background-position: 60% 85%;
+    background-size: 500%;
+  }
+  
+  40% {
+    background-position: 49% 81%;
+    background-size: 500%;
+  }
+  
+  40.0001% { /* -- View 3 -- */
+    background-position: 80% 42%;
+    background-size: 300%;
+  }
+  
+  60% {
+    background-position: 84% 33%;
+    background-size: 300%;
+  }
+  
+  60.0001% { /* -- View 4 -- */
+    background-position: 0% 0%;
+    background-size: 300%;
+  }
+  
+  80% {
+    background-position: 15% 4%;
+    background-size: 300%;
+  }
+  
+  80.0001% { /* -- View 5 -- */
+    background-position: 80% 10%;
+    background-size: 300%;
+  }
+  
+  100% {
+    background-position: 72% 14%;
+    background-size: 300%;
+  }
 }
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #d7dce0;
+      }
+
+      .cls-3 {
+        fill: #cda284;
+      }
+
+      .cls-4 {
+        fill: #4dc0b8;
+      }
+
+      .cls-5 {
+        fill: #31383c;
+      }
+
+      .cls-6 {
+        fill: #3b4550;
+      }
+
+      .cls-7 {
+        fill: #3ea190;
+      }
+
+      .cls-8 {
+        fill: #e9cda2;
+      }
+
+
+
+        .random{
+        animation: random 20s infinite ;
+    }
+    @keyframes random {
+        0%{
+            filter: grayscale(0.1);
+        }
+           20%{
+            filter: grayscale(0.5);
+        }
+        30%{
+            filter: grayscale(1);
+        }
+        40%{
+            filter: grayscale(0.2);
+        }
+        50%{
+            filter: grayscale(0.6);
+        }
+        60%{
+            filter: grayscale(1);
+        }
+        70%{
+            filter: grayscale(0.3);
+        }80%{
+            filter: grayscale(0.5);
+        }
+        90%{
+            filter: grayscale(1);
+        }
+        100%{
+            filter: grayscale(0.1);
+        }
+    }
